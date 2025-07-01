@@ -48,6 +48,7 @@ def switch_operator(operator):
     }
     return switcher.get(operator, "invalid")
 
+# test kommentar
 
 def calculator():
     """Main function of the calculator app
