@@ -14,10 +14,10 @@ jobs:
     - name: Repository auschecken
       uses: actions/checkout@v3
 
-    - name: Python 3.10 einrichten
+    - name: Python 3.9 einrichten
       uses: actions/setup-python@v4
       with:
-        python-version: 3.10
+        python-version: 3.9
 
     - name: Abhängigkeiten installieren
       run: |
