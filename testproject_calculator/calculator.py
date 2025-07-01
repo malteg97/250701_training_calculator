@@ -8,6 +8,12 @@ def add(num1, num2):
     print(f"{num1} + {num2} = {result}")
     return result
 
+def subtract(num1, num2):
+    """Subtract num2 from num1"""
+    result = num1 - num2
+    print(f"{num1} - {num2} = {result}")
+    return result
+
 
 def is_number(value):
     try:
@@ -37,6 +43,7 @@ def switch_operator(operator):
     """
     switcher = {
         "+": add,
+        "-": subtract,
         "": None
     }
     return switcher.get(operator, "invalid")
