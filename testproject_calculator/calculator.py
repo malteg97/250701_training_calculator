@@ -38,6 +38,7 @@ def is_number(value):
         return False
     return True
 
+# testkommentar
 
 def get_number_from_user():
     """Get input from user and return as float number
