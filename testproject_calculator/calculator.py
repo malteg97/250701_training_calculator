@@ -16,6 +16,11 @@ def multiply(num1, num2):
     return result   
 
 
+def subtract(num1, num2):
+    """Subtract num2 from num1"""
+    result = num1 - num2
+    print(f"{num1} - {num2} = {result}")
+    return result
 
 
 def is_number(value):
@@ -47,11 +52,11 @@ def switch_operator(operator):
     switcher = {
         "+": add,
         "*": multiply,
+        "-": subtract,
         "": None
     }
     return switcher.get(operator, "invalid")
 
-# test kommentar
 
 def calculator():
     """Main function of the calculator app
