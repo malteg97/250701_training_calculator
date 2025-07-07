@@ -22,6 +22,7 @@ def subtract(num1, num2):
     print(f"{num1} - {num2} = {result}")
     return result
 
+# testkommentar zum testen von codecov
 
 def is_number(value):
     try:
