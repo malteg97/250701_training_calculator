@@ -31,6 +31,12 @@ def divide(num1, num2):
     print(f"{num1} / {num2} = {result}")
     return result
 
+def power(num1, num2):
+    """Raise num1 to the power of num2"""
+    result = num1 ** num2
+    print(f"{num1} ** {num2} = {result}")
+    return result
+
 def is_number(value):
     try:
         float(value)
@@ -61,6 +67,7 @@ def switch_operator(operator):
         "*": multiply,
         "-": subtract,
         "/": divide,
+        "**": power,
         "": None
     }
     return switcher.get(operator, "invalid")
