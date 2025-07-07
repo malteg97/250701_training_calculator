@@ -22,7 +22,14 @@ def subtract(num1, num2):
     print(f"{num1} - {num2} = {result}")
     return result
 
-# testkommentar zum testen von codecov
+def divide(num1, num2):
+    """Divide num1 by num2"""
+    if num2 == 0:
+        print("Division durch Null ist nicht erlaubt.")
+        return None
+    result = num1 / num2
+    print(f"{num1} / {num2} = {result}")
+    return result
 
 def is_number(value):
     try:
@@ -54,6 +61,7 @@ def switch_operator(operator):
         "+": add,
         "*": multiply,
         "-": subtract,
+        "/": divide,
         "": None
     }
     return switcher.get(operator, "invalid")
