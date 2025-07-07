@@ -30,7 +30,8 @@ jobs:
         pytest --cov=./ --cov-branch --cov-report=xml 
 
     - name: Coverage zu Codecov hochladen
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v5
       with:
+        token: ${{ secrets.CODECOV_TOKEN }}
         files: coverage.xml
         fail_ci_if_error: true
