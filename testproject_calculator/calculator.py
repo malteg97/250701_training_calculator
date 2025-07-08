@@ -8,44 +8,6 @@ def add(num1, num2):
     print(f"{num1} + {num2} = {result}")
     return result
 
-def multiply(num1, num2):
-    """Multiply two numbers
-    """
-    result = num1 * num2
-    print(f"{num1} * {num2} = {result}")
-    return result   
-
-
-def subtract(num1, num2):
-    """Subtract num2 from num1"""
-    result = num1 - num2
-    print(f"{num1} - {num2} = {result}")
-    return result
-
-def divide(num1, num2):
-    """Divide num1 by num2"""
-    if num2 == 0:
-        print("Division durch Null ist nicht erlaubt.")
-        return None
-    result = num1 / num2
-    print(f"{num1} / {num2} = {result}")
-    return result
-
-def power(num1, num2):
-    """Raise num1 to the power of num2"""
-    result = num1 ** num2
-    print(f"{num1} ** {num2} = {result}")
-    return result
-
-def root(num1, num2):
-    """Calculate the nth root of num1"""
-    if num1 < 0 and num2 % 2 == 0:
-        print("Die Wurzel aus einer negativen Zahl ist nicht definiert.")
-        return None
-    result = num1 ** (1 / num2)
-    print(f"{num2} Wurzel von {num1} = {result}")
-    return result
-
 def is_number(value):
     try:
         float(value)
@@ -75,10 +37,6 @@ def switch_operator(operator):
     switcher = {
         "+": add,
         "*": multiply,
-        "-": subtract,
-        "/": divide,
-        "**": power,
-        "root": root,
         "": None
     }
     return switcher.get(operator, "invalid")
