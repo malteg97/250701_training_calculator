@@ -35,13 +35,8 @@ jobs:
                --tb=short \
                --no-header \
                --tb=line
-      continue-on-error: true
+      continue-on-error: false
       
-    - name: Test-Zusammenfassung anzeigen
-      if: always()
-      run: |
-        echo "=== TEST ABGESCHLOSSEN ==="
-        echo "Details siehe oben in den pytest Logs"
         
     - name: Coverage zu Codecov hochladen
       if: always()
