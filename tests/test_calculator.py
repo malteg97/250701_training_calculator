@@ -12,6 +12,5 @@ class TestCalculator:
     def test_subtract(self):
         assert 2 == calculator.subtract(5, 3)
 
-    def divide(self):
+    def test_divide(self):
         assert 2 == calculator.divide(6, 3)
-        
