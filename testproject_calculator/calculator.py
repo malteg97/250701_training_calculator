@@ -55,6 +55,7 @@ def get_number_from_user():
         return None
 
 # test 
+# another test 
 
 def switch_operator(operator):
     """Map the users input (operator) to the function that needs to be executed
