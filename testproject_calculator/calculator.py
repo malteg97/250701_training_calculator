@@ -8,6 +8,13 @@ def add(num1, num2):
     print(f"{num1} + {num2} = {result}")
     return result
 
+def multiply(num1, num2):
+    """Multiply two numbers
+    """
+    result = num1 * num2
+    print(f"{num1} * {num2} = {result}")
+    return result
+
 def subtract(num1, num2):
     """Subtract two numbers
     """
@@ -43,6 +50,7 @@ def switch_operator(operator):
     """
     switcher = {
         "+": add,
+        "*": multiply,
         "-": subtract,
         "": None
     }
