@@ -37,6 +37,15 @@ def power(num1, num2):
     print(f"{num1} ** {num2} = {result}")
     return result
 
+def root(num1, num2):
+    """Calculate the nth root of num1"""
+    if num1 < 0 and num2 % 2 == 0:
+        print("Die Wurzel aus einer negativen Zahl ist nicht definiert.")
+        return None
+    result = num1 ** (1 / num2)
+    print(f"{num2} Wurzel von {num1} = {result}")
+    return result
+
 def is_number(value):
     try:
         float(value)
@@ -55,6 +64,7 @@ def get_number_from_user():
         return None
 
 
+
 def switch_operator(operator):
     """Map the users input (operator) to the function that needs to be executed
 
@@ -68,6 +78,7 @@ def switch_operator(operator):
         "-": subtract,
         "/": divide,
         "**": power,
+        "root": root,
         "": None
     }
     return switcher.get(operator, "invalid")
@@ -84,6 +95,7 @@ def calculator():
                          "'/' für Division\n"
                          "'*' für Multiplikation\n"
                          "'**' für Potenzieren\n"
+                         "'root' für Wurzel ziehen\n"
                          "Enter ohne Eingabe zum Abbrechen\n"
                          "Eingabe: ")
         operating_function = switch_operator(operator)
