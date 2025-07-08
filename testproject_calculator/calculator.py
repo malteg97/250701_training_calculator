@@ -22,6 +22,9 @@ def subtract(num1, num2):
     print(f"{num1} - {num2} = {result}")
     return result
 
+# Hier soll die Division hin 
+
+
 def is_number(value):
     try:
         float(value)
