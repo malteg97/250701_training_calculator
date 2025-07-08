@@ -23,6 +23,15 @@ def subtract(num1, num2):
     return result
 
 # Hier soll die Division hin 
+def divide(num1, num2):
+    """Divide two numbers
+    """
+    if num2 == 0:
+        print("Division durch Null ist nicht erlaubt.")
+        return None
+    result = num1 / num2
+    print(f"{num1} / {num2} = {result}")
+    return result
 
 
 def is_number(value):
@@ -55,6 +64,7 @@ def switch_operator(operator):
         "+": add,
         "*": multiply,
         "-": subtract,
+        "/": divide,
         "": None
     }
     return switcher.get(operator, "invalid")
