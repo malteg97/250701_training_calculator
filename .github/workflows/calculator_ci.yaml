@@ -9,10 +9,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
     - name: Repository auschecken
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Wichtig für bessere Diff-Berichte
 
     - name: Python 3.9 einrichten
       uses: actions/setup-python@v4
@@ -27,11 +28,12 @@ jobs:
 
     - name: Tests ausführen
       run: |
-        pytest --cov=./ --cov-branch --cov-report=xml 
+        pytest --cov=./ --cov-branch --cov-report=xml
 
     - name: Coverage zu Codecov hochladen
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v4
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        files: coverage.xml
+        file: ./coverage.xml
         fail_ci_if_error: true
+        verbose: true

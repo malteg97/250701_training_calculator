@@ -3,23 +3,22 @@ coverage:
     project:
       default:
         target: auto
-        threshold: 1%
+        threshold: 0%
         base: auto
     patch:
       default:
         target: auto
-        threshold: 1%
+        threshold: 0%
         base: auto
 
 comment:
-  layout: "reach,diff,flags,tree,reach"
+  layout: "reach,diff,flags,tree,betaprofiling"
   behavior: default
   require_changes: false
   require_base: false
   require_head: true
-  branches:
-    - master
-    - main
+  show_carryforward_flags: false
+  after_n_builds: 1
 
 parsers:
   gcov:
