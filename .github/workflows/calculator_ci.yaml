@@ -35,7 +35,6 @@ jobs:
                --tb=short \
                --no-header \
                --tb=line
-      continue-on-error: false
       
         
     - name: Coverage zu Codecov hochladen
