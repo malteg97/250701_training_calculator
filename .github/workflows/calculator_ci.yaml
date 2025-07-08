@@ -28,14 +28,40 @@ jobs:
         pip install pytest-cov
         
     - name: Tests ausführen mit detaillierten Logs
+      id: pytest
       run: |
         echo "=== Starte Tests ==="
+        echo "=== Gefundene Testdateien ==="
+        find . -name "test_*.py" -o -name "*_test.py"
+        echo ""
+        echo "=== Pytest Collection ==="
+        pytest --collect-only -v
+        echo ""
+        echo "=== Führe Tests aus ==="
         pytest --cov=./ --cov-branch --cov-report=xml \
                --verbose \
                --tb=short \
-               --no-header \
-               --tb=line
-      
+               -s \
+               --no-header || echo "PYTEST_FAILED=true" >> $GITHUB_ENV
+      continue-on-error: true
+        
+    - name: Test Ergebnisse anzeigen
+      if: always()
+      run: |
+        echo "=== TEST ZUSAMMENFASSUNG ==="
+        if [ "$PYTEST_FAILED" = "true" ]; then
+          echo "❌ Tests sind fehlgeschlagen!"
+          echo "Details siehe oben im 'Tests ausführen' Schritt"
+        else
+          echo "✅ Alle Tests erfolgreich!"
+        fi
+        echo ""
+        echo "=== Coverage Report ==="
+        if [ -f coverage.xml ]; then
+          echo "Coverage-Datei wurde erstellt ✅"
+        else
+          echo "Coverage-Datei fehlt ❌"
+        fi
         
     - name: Coverage zu Codecov hochladen
       if: always()
@@ -45,3 +71,13 @@ jobs:
         file: ./coverage.xml
         fail_ci_if_error: false
         verbose: true
+        
+    - name: Pipeline Status setzen
+      if: always()
+      run: |
+        if [ "$PYTEST_FAILED" = "true" ]; then
+          echo "Tests sind fehlgeschlagen - Pipeline wird als fehlgeschlagen markiert"
+          exit 1
+        else
+          echo "Alle Tests erfolgreich - Pipeline erfolgreich"
+        fi
