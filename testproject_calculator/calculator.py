@@ -8,31 +8,6 @@ def add(num1, num2):
     print(f"{num1} + {num2} = {result}")
     return result
 
-def multiply(num1, num2):
-    """Multiply two numbers
-    """
-    result = num1 * num2
-    print(f"{num1} * {num2} = {result}")
-    return result
-
-def subtract(num1, num2):
-    """Subtract two numbers
-    """
-    result = num1 - num2
-    print(f"{num1} - {num2} = {result}")
-    return result
-
-# Hier soll die Division hin 
-def divide(num1, num2):
-    """Divide two numbers
-    """
-    if num2 == 0:
-        print("Division durch Null ist nicht erlaubt.")
-        return None
-    result = num1 / num2
-    print(f"{num1} / {num2} = {result}")
-    return result
-
 
 def is_number(value):
     try:
@@ -62,9 +37,6 @@ def switch_operator(operator):
     """
     switcher = {
         "+": add,
-        "*": multiply,
-        "-": subtract,
-        "/": divide,
         "": None
     }
     return switcher.get(operator, "invalid")
