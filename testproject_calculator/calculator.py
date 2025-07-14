@@ -37,9 +37,6 @@ def switch_operator(operator):
     """
     switcher = {
         "+": add,
-        "*": multiply,
-        "-": subtract,
-        "/": divide,
         "": None
     }
     return switcher.get(operator, "invalid")
