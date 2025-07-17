@@ -8,6 +8,12 @@ def add(num1, num2):
     print(f"{num1} + {num2} = {result}")
     return result
 
+def subtract(num1, num2):
+    """Subtract two numbers
+    """
+    result = num1 - num2
+    print(f"{num1} - {num2} = {result}")
+    return result
 # test
 
 def is_number(value):
